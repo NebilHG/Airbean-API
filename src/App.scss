@@ -1,0 +1,60 @@
+@import 'src/sass/variables.scss';
+
+.app {
+    position: relative;
+    width: 100%;
+    max-width: 375px;
+    min-width: 375px;
+    background: $airbeanPink;
+    min-height: 667px;
+    max-height: 667px;
+    box-shadow: 0 4px 16px #00000047;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .app__topImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+    .app__bottomImage {
+        position: relative;
+        bottom: -4px;
+        right: 0;
+        pointer-events: none;
+    }
+
+    h1 {
+        font-family: $fontFamilyPTSerif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 60px;
+        color: $airbeanBrown;
+    }
+}
+
+.app__token-expired {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 10px;
+    left: 22%;
+    width: 56%;
+    padding: 1.2rem 1rem;
+    background: rgb(195, 16, 16);
+    color: white;
+    z-index: 100;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px #00000054;
+    border: 2px solid rgb(214, 45, 45);
+    font-family: $fontFamilyWorkSans;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-120%);
+    opacity: 0;
+
+    &.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "poop-rollers",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/pt-serif": "^4.5.11",
+    "@fontsource/work-sans": "^4.5.14",
+    "axios": "^1.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.1",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "sass": "^1.58.3",
+    "vite": "^4.1.0",
+    "vite-jsconfig-paths": "^2.0.1"
+  }
+}

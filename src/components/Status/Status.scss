@@ -1,0 +1,74 @@
+@import 'src/sass/variables.scss';
+
+.app__status {
+    position: absolute;
+    width: 375px;
+    height: 667px;
+    top: 0;
+    left: 0;
+    background: $airbeanOrange;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 6;
+
+    &--ordernumber {
+        padding-top: 4rem;
+        text-align: center;
+        font-family: $fontFamilyWorkSans;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.2px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &--droneImg {
+        margin-top: 2.7rem;
+    }
+
+    &--cupImg {
+        margin-top: -1.3rem;
+    }
+
+    &--orderMsg {
+        width: 100%;
+        text-align: center;
+        font-family: $fontFamilyPTSerif;
+        font-size: 36px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 4rem;
+        padding: 0 3rem;
+    }
+
+    &--orderDeliveryTime {
+        margin-top: 1.5rem;
+        font-family: $fontFamilyWorkSans;
+        font-size: 21px;
+
+        span {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    }
+
+    &--button {
+        margin-top: 4.4rem;
+        padding: 1rem 3.2rem;
+        border: none;
+        border-radius: 50px;
+        font-family: $fontFamilyPTSerif;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            background: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+        }
+    }
+}

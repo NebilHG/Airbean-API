@@ -1,0 +1,121 @@
+@import 'src/sass/variables.scss';
+
+.app__profile {
+    width: 375px;
+    min-height: 577px;
+    background: #222222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+
+    &--picture {
+        width: 94px;
+        height: 94px;
+        background-image: url("../../assets/profile_profilepicture.svg");
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+        background-size: 94px;
+        border-radius: 50%;
+        background-color: $airbeanPink;
+        margin-top: 2rem;
+    }
+
+    &--name {
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 80px;
+        padding-top: 0.6rem;
+    }
+
+    &--ulWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2rem;
+
+        .ulWrapper__header {
+            width: 85%;
+            font-family: $fontFamilyPTSerif;
+            font-size: 22px;
+            font-weight: bold;
+            list-style: none;
+            margin-top: .7rem;
+        }
+
+        li {
+            margin-top: .5rem;
+            font-family: $fontFamilyWorkSans;
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            p {
+                width: 50%;
+            }
+
+            .orderHistory__totalText,
+            .orderHistory__orderSum {
+                font-size: 12px;
+                font-weight: normal;
+                opacity: .5;
+            }
+
+            .orderHistory__date,
+            .orderHistory__orderSum {
+                font-weight: normal;
+                text-align: right;
+            }
+
+            .orderHistory__date {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        li:nth-last-child(2) {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        li:last-child {
+            margin-top: .6rem;
+            border-bottom: none;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .totalList__sum {
+            text-align: right;
+        }
+    }
+
+    button {
+        display: flex;
+        border: none;
+        border-radius: 50px;
+        font-family: $fontFamilyPTSerif;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+        
+        a {
+            padding: 0.7rem 2.2rem;
+            text-decoration: none;
+            color: black;
+            transition: all 0.1s ease-in-out;
+        }
+
+        &:hover {
+            background: rgb(136, 28, 28);
+            a {
+                color: rgb(255, 255, 255);
+            }
+        }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}

@@ -1,0 +1,145 @@
+@import 'src/sass/variables.scss';
+@import 'src/sass/mixins.scss';
+
+.app__navbar {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  @include center;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  font-size: 32px;
+  background-color: $airbeanBrown;
+  font-family: 'PT Sarif';
+  transform: translateY(-90%);
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+
+  a, span {
+    color: white;
+    text-decoration-line: none;
+    padding: 20px; 
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      color: $airbeanGreen;
+      cursor: pointer;
+    }
+  }
+
+  hr {
+    width: 48px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 0;
+    
+  }
+
+  &.openNavbar {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+}
+  
+.navbar__burger {
+  @include center;
+  flex-direction: column;
+  gap: 0.3rem;
+  background: white;
+  outline: 0;
+  border: 0;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  cursor: pointer;
+  
+  position: relative;
+
+  figure {
+    position: relative;
+    height: 2px;
+    width: 26px;
+    background: #222222;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &.openNavbar {
+    figure:first-child {
+      position: absolute;
+      transform: rotate(45deg) translate(0, 0);
+    }
+    figure:nth-child(2) {
+      opacity: 0;
+    }
+    figure:last-child {
+      position: absolute;
+      transform: rotate(-45deg) translate(0, 0);
+    }
+  }
+}
+
+.navbar__cart {
+  position: relative;
+  background: $airbeanBrown;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 5;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    @include center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: $airbeanOrange;
+    color: white;
+    font-size: 12px;
+    font-family: $fontFamilyPTSerif;
+  }
+}
+
+.navbar__cartBg {
+  position: fixed;
+  pointer-events: none;
+  width: 375px;
+  height: 667px;
+  top: calc(50% - 333.5px);
+  left: calc(50% - 187.5px);
+  background: #000000c5;
+  z-index: 4;
+  transition: all 0.1s ease-in-out;
+  opacity: 0;
+
+  &.openCart {
+    opacity: 1;
+    pointer-events: all;
+  }
+}

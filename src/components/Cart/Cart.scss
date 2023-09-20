@@ -1,0 +1,162 @@
+@import 'src/sass/variables.scss';
+@import 'src/sass/mixins.scss';
+
+.app__cart {
+  position: absolute;
+  top: 76px;
+  width: 90%;
+  left: 5%;
+  background: #ffffff;
+  border-radius: 3px;
+  padding: 1rem;
+  z-index: 5;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+
+  &--arrow {
+    position: absolute;
+    right: 11px;
+    top: -10px;
+    border-bottom: 10px solid white;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  
+  h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: $fontFamilyPTSerif;
+  }
+  
+  &--item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px; 
+    height:fit-content;
+    font-family: $fontFamilyPTSerif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    flex-direction: column;
+    letter-spacing: 0.3px;
+
+    aside {
+      position: relative;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      p {
+        background: white;
+        z-index: 2;
+      }
+
+      .app__cart--item-dots {
+        position: absolute;
+        top: 16px;
+        width: 100%;
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+
+      p:first-child {
+        padding-right: 0.4rem;
+      }
+
+      p:last-child {
+        font-size: 14px;
+        font-weight: 600;
+        padding-left: 0.4rem;
+      }
+    }
+
+    span {
+      font-family: $fontFamilyWorkSans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 15.6px;
+    }
+
+    &-edit {
+      display: flex;
+      gap: 0.3rem;
+
+      button {
+        position: relative;
+        @include center;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        border-radius: 4px;
+        transition: all 0.1s ease-in-out;
+
+        figure:nth-child(1) {
+          position: absolute;
+          height: 1px;
+          width: 60%;
+          background: #252525;
+        }
+        figure:nth-child(2) {
+          position: absolute;
+          width: 1px;
+          height: 60%;
+          background: #252525;
+        }
+
+        &:hover {
+          &:nth-child(1) {
+            background: #fecbc5;
+          }
+          &:nth-child(2) {
+            background: #d5fab9;
+          }
+        }
+      }
+    }
+  }
+
+  &.openCart {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &--sum {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    font-size: 23px;
+    font-family: $fontFamilyPTSerif;
+  }
+
+  &--moms {
+    font-size: 12px;
+    font-family: $fontFamilyWorkSans;
+    margin-left: 13px;
+    color: $airbeanBrown;
+    opacity: 0.5;
+  }
+
+  &--button {
+    height: 55px;
+    width: 248px;
+    border-radius: 50px;
+    background-color: $airbeanBrown;
+    border: none;
+    margin-left: 25px;
+    margin-top: 20px;
+    font-family: $fontFamilyPTSerif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    cursor: pointer;
+    color: #FFFFFF;
+  }
+}
